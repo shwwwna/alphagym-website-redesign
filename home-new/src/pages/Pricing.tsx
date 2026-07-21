@@ -127,11 +127,25 @@ function Pricing() {
               Add-ons &amp; partner access
             </h2>
           </div>
-          <div className="max-w-[560px] flex flex-col gap-3 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--depth)] p-8">
-            <div className="text-[color:var(--cream)] text-xl font-medium">Fitness Passport</div>
-            <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">
-              24/7 access plus unlimited group classes via Fitness Passport, with a one-off $49 joining fee and a complimentary Evolt body scan + consult.
-            </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="flex flex-col gap-3 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--depth)] p-8">
+              <div className="text-[color:var(--cream)] text-xl font-medium">Fitness Passport</div>
+              <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">
+                24/7 access plus unlimited group classes via Fitness Passport, with a one-off $49 joining fee and a complimentary Evolt body scan + consult.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--depth)] p-8">
+              <div className="text-[color:var(--cream)] text-xl font-medium">ClassPass</div>
+              <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">
+                Book a visit to Alpha Gym Woonona through ClassPass. $0 joining fee, $0 access card fee — 1 visit per booking.
+              </p>
+              <a
+                href="https://classpass.com/studios/alpha-gym-woonona"
+                className="self-start relative flex items-center gap-2 px-4 py-2 mt-2 rounded-lg text-sm font-medium text-[color:var(--cream)] border border-[color:var(--cream-16)]"
+              >
+                Book on ClassPass
+              </a>
+            </div>
           </div>
         </div>
       </section>
