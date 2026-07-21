@@ -1,9 +1,35 @@
 import { Link } from 'react-router-dom';
 import Label from '../components/Label';
-import ArgoElevateCta from '../components/ArgoElevateCta';
 import ByqTag from '../components/ByqTag';
+import ValueFeaturesGrid from '../components/ValueFeaturesGrid';
+import InsightsCards from '../components/InsightsCards';
+import VideoShowcase from '../components/VideoShowcase';
+import TwoColCta from '../components/TwoColCta';
+import ContactGrid from '../components/ContactGrid';
 
 const MEMBERSHIP_URL = 'https://myaccount.clubfit.net.au/onlineoffers?code=ALPHAGYM&accountId=1&showall=true';
+const INSTAGRAM_URL = 'https://www.instagram.com/alphagym.au/';
+
+const COACHING = [
+  {
+    title: 'Personal Training',
+    hook: 'Ready to turn it up a gear?',
+    body: 'One-on-one. Your trainer. Your program. Built around your goals from day one — correct technique, real accountability, every session pushed to your best.',
+    cta: 'Book a session',
+  },
+  {
+    title: 'Group Classes',
+    hook: "Everyone's training for something different.",
+    body: "That's why we run a full range of classes to suit every level and skill. Check the timetable to see what's on.",
+    cta: 'Join a class',
+  },
+  {
+    title: 'Nutritional Guidance',
+    hook: 'Training is only half the job.',
+    body: "Nutrition accounts for around 80% of your results — it's not an exaggeration, it's the numbers. If you're serious about your goals, book a consultation and your trainer will build a strategic, personalised nutrition plan around you.",
+    cta: 'Book In',
+  },
+];
 
 function Home() {
   return (
@@ -26,22 +52,25 @@ function Home() {
               Train. Recover. <span className="text-[color:var(--cream-64)]">Repeat.</span>
             </h1>
             <p className="text-[color:var(--cream-64)] text-base leading-6 max-w-[520px]">
-              650m² of state-of-the-art training space, group classes, recovery, supplements and a barbershop — all under one roof in the Northern Illawarra.
+              The Illawarra's only train-recover-and-reset facility — gym, ice bath &amp; sauna, supplements and a barbershop under one roof in Woonona. 650m² of floor, open 24/7.
             </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <a
-                href={MEMBERSHIP_URL}
-                className="self-start relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
-              >
-                <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
-                Be a Member
-              </a>
-              <a
-                href="https://classpass.com/studios/alpha-gym-woonona"
-                className="self-start relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[color:var(--cream)] border border-[color:var(--cream-16)]"
-              >
-                ClassPass
-              </a>
+            <div className="flex flex-col gap-2">
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href={MEMBERSHIP_URL}
+                  className="self-start relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
+                >
+                  <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
+                  Start today — train tonight
+                </a>
+                <a
+                  href="https://classpass.com/studios/alpha-gym-woonona"
+                  className="self-start relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[color:var(--cream)] border border-[color:var(--cream-16)]"
+                >
+                  ClassPass
+                </a>
+              </div>
+              <p className="text-[color:var(--cream-64)] text-xs">No lock-in · cancel anytime</p>
             </div>
             <p className="text-[color:var(--cream-64)] text-sm">
               Join today, train tonight — staffed hours plus 24/7 swipe access, the gym floor is open around the clock.
@@ -50,58 +79,54 @@ function Home() {
         </div>
       </header>
 
-      {/* Stats — byq: modulabs-stats-3 */}
-      <section id="facility" className="relative py-20 px-8 bg-[color:var(--bg)]">
-        <ByqTag>modulabs-stats-3</ByqTag>
-        <div className="max-w-[1800px] mx-auto">
-          <div className="flex flex-wrap justify-between items-end gap-6 mb-16">
-            <div className="flex flex-col gap-6">
-              <Label>Facility</Label>
-              <h2 className="m-0 text-[color:var(--cream)] font-normal text-[48px] leading-[48px] tracking-[-2px]">
-                Built for serious training
-              </h2>
-            </div>
-            <p className="max-w-[448px] text-[color:var(--cream-64)] text-base leading-6">
-              Every piece of kit you need and plenty you won't find anywhere else in the Illawarra.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 rounded-lg overflow-hidden border border-[color:var(--cream-16)] bg-[color:var(--lift)] divide-x divide-y md:divide-y-0 divide-[color:var(--cream-16)]">
-            {[
-              ['650m²', 'Gym Floor'],
-              ['24/7', '365 Access'],
-              ['6', 'Squat Racks'],
-              ['5', 'Ways to level up'],
-            ].map(([n, l]) => (
-              <div key={l} className="flex flex-col items-center justify-center text-center gap-4 py-20 px-8">
-                <div className="text-[color:var(--accent)] text-[64px] leading-[60px] tracking-[-2.5px]">{n}</div>
-                <div className="text-[color:var(--cream-64)] text-sm">{l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Facility — byq: modulabs-value-features-10 */}
+      <ValueFeaturesGrid
+        id="facility"
+        eyebrow="The Facility"
+        heading="Built for serious training"
+        text="Every piece of kit you need and plenty you won't find anywhere else in the Illawarra — plus personal training, exercise programs and nutritional guidance from highly trained staff."
+        items={[
+          'Cardio & functional zones',
+          'Showers, lockers & towel service',
+          'Underground parking & lift',
+          'Evolt body scan machine',
+          'Kitchenette & social area',
+          'Child change room, disabled access',
+        ]}
+        actions={[{ label: 'Read more', href: '/facility', primary: true }]}
+        imageSide="left"
+      />
 
-      {/* Classes / Services — byq: modulabs-value-features-5 */}
-      <section id="classes" className="relative py-20 px-8 bg-[color:var(--bg)]">
-        <ByqTag>modulabs-value-features-5</ByqTag>
+      {/* Classes & Coaching — byq: modulabs-cms-grid-3 (insights blog grid, 3-col) */}
+      <section id="classes" className="relative py-20 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]">
+        <ByqTag>modulabs-cms-grid-3</ByqTag>
         <div className="max-w-[1800px] mx-auto flex flex-col gap-16">
           <div className="flex flex-col gap-6 max-w-[680px]">
             <Label>Train Your Way</Label>
             <h2 className="m-0 text-[color:var(--cream)] font-normal text-[48px] leading-[48px] tracking-[-2px]">
               Classes &amp; Coaching
             </h2>
+            <p className="m-0 text-[color:var(--cream-64)] text-base leading-6">
+              Classes for all ages and abilities, or one-on-one sessions at your own pace — whatever gets you to your goals.
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
-            {[
-              ['Personal Training', 'A personalised program built around your goals, with a trainer pushing you to your best every session.'],
-              ['Group Classes', 'A big range of classes for every fitness level and skill set.'],
-              ['Nutrition', 'Nutrition is 80% of your results. Book a consult and get a strategic, personalised plan.'],
-            ].map(([title, desc]) => (
-              <div key={title} className="flex flex-col gap-8 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--lift)] p-8">
-                <div className="h-52 rounded-lg bg-[color:var(--depth)]" />
-                <div className="flex flex-col gap-3">
-                  <div className="text-[color:var(--cream)] text-xl font-medium">{title}</div>
-                  <p className="text-[color:var(--cream-64)] text-base leading-6">{desc}</p>
+            {COACHING.map((c) => (
+              <div
+                key={c.title}
+                className="flex flex-col rounded-lg overflow-hidden border border-[color:var(--cream-16)] bg-[color:var(--lift)]"
+              >
+                <div className="h-52 bg-[color:var(--depth)]" />
+                <div className="flex flex-col gap-3 p-8 grow">
+                  <div className="text-[color:var(--cream)] text-xl font-medium">{c.title}</div>
+                  <div className="text-[color:var(--cream-88)] text-base font-medium">{c.hook}</div>
+                  <p className="m-0 text-[color:var(--cream-64)] text-base leading-6">{c.body}</p>
+                  <Link
+                    to="/classes"
+                    className="mt-auto self-start flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-[color:var(--cream)] border border-[color:var(--cream-16)] hover:bg-[color:var(--cream)] hover:text-[#0a0a0b] transition-colors"
+                  >
+                    {c.cta}
+                  </Link>
                 </div>
               </div>
             ))}
@@ -109,35 +134,88 @@ function Home() {
         </div>
       </section>
 
-      {/* Day Pass — byq: halden-miller-cta-3 (spotlight card, single-offer callout) */}
-      <section className="relative py-20 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]">
-        <ByqTag>halden-miller-cta-3</ByqTag>
-        <div className="relative overflow-hidden max-w-[1800px] mx-auto flex flex-wrap items-center justify-between gap-8 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--depth)] p-8 md:p-16">
-          <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[color:var(--accent)] blur-[160px] opacity-25 pointer-events-none" />
-          <div className="relative z-10 flex flex-col gap-4 max-w-[600px]">
-            <Label>Not ready to commit?</Label>
-            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[48px] md:text-[56px] leading-[1.05] tracking-[-1.5px]">
-              Try a 1 Day Pass — <span className="text-[color:var(--accent)]">$15</span>
-            </h2>
-            <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">
-              Staffed-hours access to the full gym floor, one visit at a time. $0 joining fee, $0 access tag fee — just turn up and train.
-            </p>
-          </div>
-          <a
-            href={MEMBERSHIP_URL}
-            className="relative z-10 flex items-center gap-2 px-6 py-4 rounded-full text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
-          >
-            <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
-            Get a Day Pass
-          </a>
-        </div>
-      </section>
+      {/* Recovery — byq: modulabs-value-features-10 */}
+      <ValueFeaturesGrid
+        eyebrow="Recover Harder"
+        heading="Alpha Recovery"
+        text="The Illawarra's premium recovery facility — an oasis of relaxation and self-improvement, right next to the gym floor."
+        note="Bookings essential."
+        items={[
+          'PlusLife ice bath',
+          'Normatec recovery',
+          'Spray tan & teeth whitening',
+          'Infrared sauna',
+          'Massage & IV drip',
+          'Beauty bar, showers & towels',
+        ]}
+        actions={[
+          { label: 'Read more', href: '/recovery', primary: true },
+          { label: 'Follow on Instagram', href: 'https://www.instagram.com/alpharecovery_woonona/?hl=en' },
+        ]}
+        imageSide="right"
+      />
 
-      {/* Argo Elevate — byq: offthegrid-cta-1 / sound-stories-cta-1 (CtaBanner) */}
-      <ArgoElevateCta />
+      {/* Supplements & Barbershop — byq: modulabs-cms-grid-3 */}
+      <InsightsCards
+        cards={[
+          {
+            eyebrow: 'Fuel',
+            title: 'Alpha Supplements',
+            body: "The widest range of pre-workouts, proteins and health supplements from the industry's biggest brands — at seriously competitive prices.",
+            meta: ['Mon–Thu 8am–12pm & 3–7pm', 'Fri–Sat 8am–12pm'],
+            actions: [
+              { label: 'Read more', href: '/supplements', primary: true },
+              { label: 'Follow on Instagram', href: 'https://www.instagram.com/alphasupps_woonona/?hl=en' },
+            ],
+            imageSide: 'left',
+          },
+          {
+            eyebrow: 'Look sharp',
+            title: 'Alpha Barbershop',
+            body: "The Northern Illawarra's premium men's barbershop — the finest tools and products, service second to none. Walk-ins welcome.",
+            actions: [
+              { label: 'Go to website', href: 'https://alphabarbershopwoonona.com/', primary: true },
+              { label: 'Follow on Instagram', href: 'https://www.instagram.com/alphabarbershopwoonona/' },
+            ],
+            imageSide: 'right',
+          },
+        ]}
+      />
+
+      {/* Video — byq: birkform-video-1 (placeholder) */}
+      <VideoShowcase heading="See inside Alpha Gym Woonona" />
+
+      {/* Day Pass + Argo Elevate — byq: halden-miller-cta-3 (2-col CTA) */}
+      <TwoColCta
+        cards={[
+          {
+            label: 'Not ready to commit?',
+            title: (
+              <>
+                Try a 1 Day Pass — <span className="text-[color:var(--accent)]">$15</span>
+              </>
+            ),
+            description:
+              'Staffed-hours access to the full gym floor, one visit at a time. $0 joining fee, $0 access tag fee — just turn up and train.',
+            action: { label: 'Claim your $15 day pass', href: MEMBERSHIP_URL, primary: true },
+          },
+          {
+            label: 'Partner Access',
+            title: (
+              <>
+                Argo Pilates Elevate member? <span className="text-[color:var(--accent)]">You're already in.</span>
+              </>
+            ),
+            description:
+              "Complimentary 24/7 Alpha Gym access for active Argo Pilates 'Elevate' members. No fees, no contract — access stays valid while your Elevate membership is active.",
+            action: { label: 'Ask About Elevate Access', href: '/contact', primary: true },
+          },
+        ]}
+        note="No lock-in · cancel anytime"
+      />
 
       {/* Pricing teaser — byq: modulabs-pricing-1 */}
-      <section id="pricing" className="relative py-20 px-8 bg-[color:var(--bg)]">
+      <section id="pricing" className="relative py-20 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]">
         <ByqTag>modulabs-pricing-1</ByqTag>
         <div className="max-w-[1800px] mx-auto">
           <div className="flex flex-col items-center text-center gap-4 max-w-[540px] mx-auto mb-20">
@@ -148,13 +226,13 @@ function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              ['Recovery', '$25', '/week', false, 'Full access to Alpha Recovery — ice bath, infrared sauna, Normatec and more.'],
-              ['24/7 Gym Access', '$20.95', '/week', true, 'Unlimited 24/7 access to the full 650m² floor, functional zone and outdoor training.'],
-              ['Alpha Annual', '$750', '/year', false, '12 months of 24/7 access upfront — works out under $14.50/week.'],
-            ].map(([title, price, per, popular, desc]) => (
+              ['Recovery', '$25', '/week', false, 'Full access to Alpha Recovery — ice bath, infrared sauna, Normatec and more.', null],
+              ['24/7 Gym Access', '$20.95', '/week', true, 'Unlimited 24/7 access to the full 650m² floor, functional zone and outdoor training.', null],
+              ['Alpha Annual', '$750', '/year', false, '12 months of 24/7 access upfront — works out under $14.50/week.', 'Save ~$339/yr vs. weekly'],
+            ].map(([title, price, per, popular, desc, save]) => (
               <div
                 key={title as string}
-                className={`flex flex-col gap-8 rounded-lg border border-[color:var(--cream-16)] p-8 ${popular ? 'bg-[color:var(--depth)]' : 'bg-[color:var(--lift)]'}`}
+                className={`flex flex-col gap-8 rounded-lg p-8 ${popular ? 'bg-[color:var(--depth)] border-2 border-[color:var(--accent)] md:scale-[1.03]' : 'bg-[color:var(--lift)] border border-[color:var(--cream-16)]'}`}
               >
                 <div className="flex justify-between items-center gap-2">
                   <div className="text-[color:var(--cream-88)] text-xl font-medium">{title}</div>
@@ -168,17 +246,27 @@ function Home() {
                     <div className="text-[color:var(--cream-64)] text-sm">{per}</div>
                   </div>
                   <div className="text-[color:var(--cream-88)] text-base leading-6">{desc}</div>
-                  <span className="self-start px-2 py-1 rounded-md border border-[color:var(--cream-16)] text-[color:var(--cream-64)] text-xs">
-                    No lock-in / cancel anytime
-                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="self-start px-2 py-1 rounded-md border border-[color:var(--cream-16)] text-[color:var(--cream-64)] text-xs">
+                      No lock-in / cancel anytime
+                    </span>
+                    {save && (
+                      <span className="self-start px-2 py-1 rounded-md border border-[color:var(--accent)] text-[color:var(--accent)] text-xs">
+                        {save}
+                      </span>
+                    )}
+                  </div>
                 </div>
-                <a
-                  href={MEMBERSHIP_URL}
-                  className="relative flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
-                >
-                  <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
-                  Choose Plan
-                </a>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href={MEMBERSHIP_URL}
+                    className="relative flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
+                  >
+                    <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
+                    Choose Plan
+                  </a>
+                  <p className="text-[color:var(--cream-64)] text-xs text-center m-0">No lock-in · cancel anytime</p>
+                </div>
                 <div className="flex flex-col gap-6">
                   <div className="font-mono-label text-[color:var(--cream-88)]">Includes</div>
                   <ul className="flex flex-col gap-4 m-0 p-0 list-none">
@@ -264,47 +352,26 @@ function Home() {
         </div>
       </section>
 
-      {/* Contact teaser — byq: modulabs-contact-1 */}
-      <section id="contact" className="relative py-20 px-8 bg-[color:var(--bg)]">
-        <ByqTag>modulabs-contact-1</ByqTag>
-        <div className="max-w-[1800px] mx-auto flex flex-wrap items-center justify-between gap-8 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--lift)] p-8 md:p-12">
-          <div className="flex flex-col gap-2 max-w-[600px]">
-            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[40px] leading-[40px] tracking-[-1px]">
-              Start today.
-            </h2>
-            <p className="text-[color:var(--cream-64)] text-base m-0">
-              1/417–421 Princes Hwy, Woonona NSW 2517 · Open 24/7, 365 days a year.
-            </p>
-          </div>
-          <Link
-            to="/contact"
-            className="relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
-          >
-            <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
-            Get in Touch
-          </Link>
-        </div>
-      </section>
+      {/* Start today + Follow along — byq: halden-miller-cta-3 (2-col CTA) */}
+      <TwoColCta
+        cards={[
+          {
+            label: 'Get in touch',
+            title: 'Start today.',
+            description: '1/417–421 Princes Hwy, Woonona NSW 2517 · Open 24/7, 365 days a year.',
+            action: { label: 'Get in Touch', href: '/contact', primary: true },
+          },
+          {
+            label: 'Follow along',
+            title: 'Promos, events & community — straight from the floor.',
+            description: 'Fresh promos and events weekly — follow along on Instagram.',
+            action: { label: '@alphagym.au on Instagram', href: INSTAGRAM_URL, primary: true },
+          },
+        ]}
+      />
 
-      {/* Follow along — byq: sound-stories-cta-1 (inverted pill-CTA social banner) */}
-      <section className="relative py-24 px-8 bg-[color:var(--cream)] border-t border-[color:var(--cream-16)]">
-        <ByqTag>sound-stories-cta-1</ByqTag>
-        <div className="max-w-[1000px] mx-auto flex flex-col items-center text-center gap-8">
-          <div className="flex items-center gap-3 text-[#0a0a0b]">
-            <span className="w-2 h-2 rounded-sm bg-[color:var(--accent-dark)]" />
-            <span className="font-mono-label">Follow along</span>
-          </div>
-          <h2 className="m-0 text-[#0a0a0b] font-normal text-[40px] md:text-[48px] leading-[1.1] tracking-[-1.5px]">
-            Promos, events &amp; community announcements — straight from the floor.
-          </h2>
-          <a
-            href="https://www.instagram.com/alphagym.au/"
-            className="relative flex items-center gap-2 px-6 py-4 rounded-full text-sm font-medium text-[color:var(--cream)] bg-[#0a0a0b]"
-          >
-            @alphagym.au on Instagram
-          </a>
-        </div>
-      </section>
+      {/* Contact grid — byq: forerunner-contact-2 */}
+      <ContactGrid id="contact" />
     </>
   );
 }

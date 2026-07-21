@@ -14,6 +14,7 @@ const plans = [
     desc: 'Staffed-hours access to Alpha Gym Woonona — the low-commitment way to try us out.',
     fees: ['$0 joining fee', '$0 access tag fee', 'Paid in full per visit'],
     includes: ['Staffed-hours access', 'No sign-up required', 'No lock-in'],
+    save: null as string | null,
   },
   {
     title: 'Fortnightly 24/7 Gym Access',
@@ -23,6 +24,7 @@ const plans = [
     desc: '24/7 access to the full 650m² floor, billed fortnightly at $41.90 with no locked-in contract.',
     fees: ['$49 joining fee', '$0 access tag fee', 'Billed $41.90/fortnight'],
     includes: ['24/7 access', 'No lock-in — cancel anytime', 'Member app'],
+    save: null,
   },
   {
     title: 'Fortnightly Youth (13–15)',
@@ -32,6 +34,7 @@ const plans = [
     desc: 'Restricted, staffed-hours access for 13–15 year olds, billed fortnightly at $35.90. Parent consent required.',
     fees: ['$49 joining fee', '$0 access tag fee', 'Billed $35.90/fortnight'],
     includes: ['Staffed-hours access', 'No lock-in — cancel anytime', 'Parent consent form required'],
+    save: null,
   },
   {
     title: 'Alpha Annual',
@@ -41,6 +44,7 @@ const plans = [
     desc: '12 months of 24/7 access paid upfront — works out under $14.50/week.',
     fees: ['$0 joining fee', '$0 access tag fee', '$750 paid in full'],
     includes: ['24/7 access', 'No lock-in — cancel anytime', 'Valid for 52 weeks'],
+    save: 'Save ~$339/yr vs. weekly',
   },
   {
     title: 'Recovery Membership',
@@ -50,6 +54,7 @@ const plans = [
     desc: 'Unlimited access (subject to availability) to Alpha Recovery — ice bath, infrared sauna, Normatec and more.',
     fees: ['$0 joining fee', '$0 access tag fee', 'Billed $50/fortnight'],
     includes: ['Ice bath, sauna & Normatec', 'No lock-in — cancel anytime', 'Health screening required'],
+    save: null,
   },
 ];
 
@@ -72,7 +77,7 @@ function Pricing() {
             {plans.map((plan) => (
               <div
                 key={plan.title}
-                className={`flex flex-col gap-8 rounded-lg border border-[color:var(--cream-16)] p-8 ${plan.popular ? 'bg-[color:var(--depth)]' : 'bg-[color:var(--lift)]'}`}
+                className={`flex flex-col gap-8 rounded-lg p-8 ${plan.popular ? 'bg-[color:var(--depth)] border-2 border-[color:var(--accent)] md:scale-[1.03]' : 'bg-[color:var(--lift)] border border-[color:var(--cream-16)]'}`}
               >
                 <div className="flex justify-between items-center gap-2">
                   <div className="text-[color:var(--cream-88)] text-xl font-medium">{plan.title}</div>
@@ -92,15 +97,23 @@ function Pricing() {
                         {f}
                       </span>
                     ))}
+                    {plan.save && (
+                      <span className="px-2 py-1 rounded-md border border-[color:var(--accent)] text-[color:var(--accent)] text-xs">
+                        {plan.save}
+                      </span>
+                    )}
                   </div>
                 </div>
-                <a
-                  href={MEMBERSHIP_URL}
-                  className="relative flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
-                >
-                  <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
-                  Choose Plan
-                </a>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href={MEMBERSHIP_URL}
+                    className="relative flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
+                  >
+                    <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
+                    Choose Plan
+                  </a>
+                  <p className="text-[color:var(--cream-64)] text-xs text-center m-0">No lock-in · cancel anytime</p>
+                </div>
                 <div className="flex flex-col gap-6">
                   <div className="font-mono-label text-[color:var(--cream-88)]">Includes</div>
                   <ul className="flex flex-col gap-4 m-0 p-0 list-none">

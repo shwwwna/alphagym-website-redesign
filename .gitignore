@@ -1,0 +1,8 @@
+# Tooling / scratch
+.gstack/
+.claude/
+**/.claude/settings.local.json
+
+# OS / editor
+.DS_Store
+*.log

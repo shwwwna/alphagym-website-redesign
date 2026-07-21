@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import Label from '../components/Label';
 import PageHero from '../components/PageHero';
 import CtaBanner from '../components/CtaBanner';
+import ContactFormCard from '../components/ContactFormCard';
 import ByqTag from '../components/ByqTag';
 
 const timetable: { day: string; classes: { time: string; name: string }[] }[] = [
@@ -13,52 +13,6 @@ const timetable: { day: string; classes: { time: string; name: string }[] }[] = 
   { day: 'Sat', classes: [{ time: '7:30am', name: 'Boxing' }, { time: '9:00am', name: 'Yoga' }] },
   { day: 'Sun', classes: [{ time: '8:00am', name: 'HIIT' }] },
 ];
-
-function BookSessionForm() {
-  const [wantsPT, setWantsPT] = useState(true);
-  const [wantsNutrition, setWantsNutrition] = useState(false);
-
-  return (
-    <div className="max-w-[680px] rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--bg)] p-8 flex flex-col gap-6">
-      <div className="flex flex-col gap-2">
-        <div className="text-[color:var(--cream)] text-xl font-medium">Book a Session</div>
-        <div className="text-[color:var(--cream-64)] text-sm">Choose one or both — we'll get back to you within one business day.</div>
-      </div>
-      <div className="flex flex-wrap gap-3">
-        <label className="flex items-center gap-3 px-4 py-3 rounded-lg border border-[color:var(--cream-16)] text-[color:var(--cream-88)] text-sm font-medium cursor-pointer">
-          <input
-            type="checkbox"
-            checked={wantsPT}
-            onChange={(e) => setWantsPT(e.target.checked)}
-            className="w-4 h-4 accent-[color:var(--accent)]"
-          />
-          Personal Training
-        </label>
-        <label className="flex items-center gap-3 px-4 py-3 rounded-lg border border-[color:var(--cream-16)] text-[color:var(--cream-88)] text-sm font-medium cursor-pointer">
-          <input
-            type="checkbox"
-            checked={wantsNutrition}
-            onChange={(e) => setWantsNutrition(e.target.checked)}
-            className="w-4 h-4 accent-[color:var(--accent)]"
-          />
-          Nutritional Guidance
-        </label>
-      </div>
-      <div className="grid md:grid-cols-2 gap-4">
-        <input placeholder="Name" className="py-3 px-4 rounded-lg bg-[color:var(--cream-08)] border border-[color:var(--cream-08)] text-[color:var(--cream)] placeholder-[color:var(--cream-64)]" />
-        <input placeholder="Email" className="py-3 px-4 rounded-lg bg-[color:var(--cream-08)] border border-[color:var(--cream-08)] text-[color:var(--cream)] placeholder-[color:var(--cream-64)]" />
-      </div>
-      <textarea placeholder="Anything we should know?" rows={3} className="py-3 px-4 rounded-lg bg-[color:var(--cream-08)] border border-[color:var(--cream-08)] text-[color:var(--cream)] placeholder-[color:var(--cream-64)]" />
-      <a
-        href="#"
-        className="self-start relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
-      >
-        <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
-        Request a Session
-      </a>
-    </div>
-  );
-}
 
 function Classes() {
   return (
@@ -155,17 +109,20 @@ function Classes() {
         </div>
       </section>
 
-      {/* Book a session — byq: modulabs-contact-1 (form pattern, reused with a service toggle) */}
-      <section id="book-session" className="relative py-20 px-8 bg-[color:var(--bg)]">
-        <ByqTag>modulabs-contact-1</ByqTag>
-        <div className="max-w-[1800px] mx-auto">
-          <BookSessionForm />
-        </div>
-      </section>
+      {/* Book a session — byq: modulabs-contact-1 (same ContactFormCard as the Contact page, with a service toggle) */}
+      <div id="book-session">
+        <ContactFormCard
+          heading="Book a Session"
+          subheading="Choose one or both — we'll get back to you within one business day."
+          checkboxes={['Personal Training', 'Nutritional Guidance']}
+          submitLabel="Request a Session"
+          messagePlaceholder="Anything we should know?"
+        />
+      </div>
 
       {/* byq: modulabs-hero-2 (CtaBanner, trimmed to heading + button) */}
       <CtaBanner
-        title="First class is on us."
+        title="Ready for your first class?"
         actions={[{ label: 'Book an Intro', href: '/#contact', primary: true }]}
       />
     </>
