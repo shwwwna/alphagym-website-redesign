@@ -57,7 +57,7 @@ function Contact() {
           <div className="font-mono-label text-[color:var(--cream-64)]">Follow Alpha Gym</div>
           <div className="flex flex-wrap gap-3">
             {[
-              ['Instagram', 'https://www.instagram.com/alphagym_woonona/'],
+              ['Instagram', 'https://www.instagram.com/alphagym.au/'],
               ['Facebook', 'https://www.facebook.com/alphagymwoonona'],
               ['TikTok', 'https://www.tiktok.com/@alphagymwoonona'],
             ].map(([label, href]) => (
