@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
 import Label from '../components/Label';
 import ByqTag from '../components/ByqTag';
+
+const MEMBERSHIP_URL = 'https://myaccount.clubfit.net.au/onlineoffers?code=ALPHAGYM&accountId=1&showall=true';
 
 function Home() {
   return (
@@ -31,6 +34,9 @@ function Home() {
               <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
               See Membership Plans
             </a>
+            <p className="text-[color:var(--cream-64)] text-sm">
+              Staffed hours plus 24/7 swipe access — the gym floor is open around the clock.
+            </p>
           </div>
         </div>
       </header>
@@ -94,7 +100,30 @@ function Home() {
         </div>
       </section>
 
-      {/* Pricing — byq: modulabs-pricing-1 */}
+      {/* Day Pass — byq: modulabs-hero-2 (CtaBanner layout, single-offer callout) */}
+      <section className="relative py-20 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]">
+        <ByqTag>modulabs-hero-2</ByqTag>
+        <div className="max-w-[1800px] mx-auto flex flex-wrap items-center justify-between gap-8 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--lift)] p-8 md:p-12">
+          <div className="flex flex-col gap-4 max-w-[600px]">
+            <Label>Not ready to commit?</Label>
+            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[40px] leading-[40px] tracking-[-1px]">
+              Try a 1 Day Pass — <span className="text-[color:var(--accent)]">$15</span>
+            </h2>
+            <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">
+              Staffed-hours access to the full gym floor, one visit at a time. $0 joining fee, $0 access tag fee — just turn up and train.
+            </p>
+          </div>
+          <a
+            href={MEMBERSHIP_URL}
+            className="relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
+          >
+            <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
+            Get a Day Pass
+          </a>
+        </div>
+      </section>
+
+      {/* Pricing teaser — byq: modulabs-pricing-1 */}
       <section id="pricing" className="relative py-20 px-8 bg-[color:var(--bg)]">
         <ByqTag>modulabs-pricing-1</ByqTag>
         <div className="max-w-[1800px] mx-auto">
@@ -126,6 +155,9 @@ function Home() {
                     <div className="text-[color:var(--cream-64)] text-sm">{per}</div>
                   </div>
                   <div className="text-[color:var(--cream-88)] text-base leading-6">{desc}</div>
+                  <span className="self-start px-2 py-1 rounded-md border border-[color:var(--cream-16)] text-[color:var(--cream-64)] text-xs">
+                    No lock-in / cancel anytime
+                  </span>
                 </div>
                 <a
                   href="#"
@@ -147,6 +179,14 @@ function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="flex flex-col items-center gap-2 mt-12 text-center">
+            <p className="text-[color:var(--cream-64)] text-sm m-0">
+              Sign up online in 2 minutes, get your tag, start today.
+            </p>
+            <Link to="/pricing" className="text-[color:var(--cream)] text-sm font-medium underline">
+              View full pricing &amp; plans →
+            </Link>
           </div>
         </div>
       </section>
@@ -175,7 +215,7 @@ function Home() {
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <span className="text-sm font-medium text-[color:var(--cream-88)]">Placeholder — replace with a real review</span>
+              <span className="text-sm font-medium text-[color:var(--cream-88)]">Alpha Gym Member</span>
               <span className="text-sm text-[color:var(--cream-64)]">Google Review</span>
             </div>
           </div>
@@ -195,8 +235,9 @@ function Home() {
           <div className="flex flex-col gap-4">
             {[
               ['Am I locked into a contract?', 'No. Our fortnightly memberships are no lock-in — cancel anytime with no exit fees.'],
-              ['What does it cost to join?', '24/7 gym access is $20.95/week with a one-off $49 joining fee and $0 access tag fee.'],
               ['Is there parking?', 'Yes — secure underground parking with lift access straight to the gym floor.'],
+              ['What does it cost to join?', '24/7 gym access is $20.95/week with a one-off $49 joining fee and $0 access tag fee.'],
+              ['What happens after I join?', 'Sign up online in 2 minutes, get your tag, start today.'],
             ].map(([q, a]) => (
               <details key={q} className="rounded-lg bg-[color:var(--depth)] p-6 cursor-pointer">
                 <summary className="flex items-center justify-between gap-8 text-[color:var(--cream-88)] text-base font-medium list-none">
@@ -210,48 +251,44 @@ function Home() {
         </div>
       </section>
 
-      {/* Contact — byq: modulabs-contact-1 */}
+      {/* Contact teaser — byq: modulabs-contact-1 */}
       <section id="contact" className="relative py-20 px-8 bg-[color:var(--bg)]">
         <ByqTag>modulabs-contact-1</ByqTag>
-        <div className="max-w-[1800px] mx-auto">
-          <div className="max-w-[680px] mx-auto text-center flex flex-col items-center gap-4 mb-16">
-            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[64px] leading-[60px] tracking-[-2.5px]">
+        <div className="max-w-[1800px] mx-auto flex flex-wrap items-center justify-between gap-8 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--lift)] p-8 md:p-12">
+          <div className="flex flex-col gap-2 max-w-[600px]">
+            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[40px] leading-[40px] tracking-[-1px]">
               Start today.
             </h2>
-            <p className="text-[color:var(--cream-64)] text-base">1/417–421 Princes Hwy, Woonona NSW 2517 · Open 24/7, 365 days a year.</p>
+            <p className="text-[color:var(--cream-64)] text-base m-0">
+              1/417–421 Princes Hwy, Woonona NSW 2517 · Open 24/7, 365 days a year.
+            </p>
           </div>
-          <div className="max-w-[1144px] mx-auto grid md:grid-cols-[1.5fr_1fr] border border-[color:var(--cream-16)] rounded-lg bg-[color:var(--lift)] overflow-hidden">
-            <div className="p-8 border-r border-[color:var(--cream-16)] flex flex-col gap-8">
-              <div className="flex flex-col gap-2">
-                <div className="text-[color:var(--cream)] text-xl font-medium">Get in touch</div>
-                <div className="text-[color:var(--cream-64)] text-sm">We'll get back to you within one business day.</div>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4">
-                <input placeholder="Name" className="py-3 px-4 rounded-lg bg-[color:var(--cream-08)] border border-[color:var(--cream-08)] text-[color:var(--cream)] placeholder-[color:var(--cream-64)]" />
-                <input placeholder="Email" className="py-3 px-4 rounded-lg bg-[color:var(--cream-08)] border border-[color:var(--cream-08)] text-[color:var(--cream)] placeholder-[color:var(--cream-64)]" />
-              </div>
-              <textarea placeholder="Message" rows={4} className="py-3 px-4 rounded-lg bg-[color:var(--cream-08)] border border-[color:var(--cream-08)] text-[color:var(--cream)] placeholder-[color:var(--cream-64)]" />
-              <a href="#" className="self-start relative flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]">
-                <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
-                Send request
-              </a>
-            </div>
-            <div className="flex flex-col">
-              {[
-                ['Phone', '+61 2 4285 5591'],
-                ['Email', 'woonona@alphagymfitness.com.au'],
-                ['Address', '1/417–421 Princes Hwy, Woonona NSW'],
-              ].map(([label, val], i) => (
-                <div key={label} className={`p-12 flex flex-col gap-4 ${i !== 2 ? 'border-b border-[color:var(--cream-16)]' : ''}`}>
-                  <span className="text-[color:var(--accent)] text-xl">•</span>
-                  <div>
-                    <div className="text-[color:var(--cream)] text-base font-medium">{val}</div>
-                    <div className="text-[color:var(--cream-64)] text-sm">{label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <Link
+            to="/contact"
+            className="relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
+          >
+            <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
+            Get in Touch
+          </Link>
+        </div>
+      </section>
+
+      {/* Instagram social — byq: dark-tech-logos-2, adapted into a single follow callout */}
+      <section className="relative py-20 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]">
+        <ByqTag>dark-tech-logos-2</ByqTag>
+        <div className="max-w-[1800px] mx-auto flex flex-wrap items-center justify-between gap-8 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--lift)] p-8 md:p-12">
+          <div className="flex flex-col gap-2 max-w-[600px]">
+            <Label>Follow along</Label>
+            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[32px] leading-[36px] tracking-[-1px]">
+              Follow @alphagym.au for promos, events &amp; community announcements.
+            </h2>
           </div>
+          <a
+            href="https://www.instagram.com/alphagym.au/"
+            className="relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[color:var(--cream)] border border-[color:var(--cream-16)]"
+          >
+            @alphagym.au
+          </a>
         </div>
       </section>
     </>

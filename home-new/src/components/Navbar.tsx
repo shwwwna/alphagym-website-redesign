@@ -24,8 +24,8 @@ function Navbar() {
             <NavLink to="/classes" className={linkClass}>Classes</NavLink>
             <NavLink to="/recovery" className={linkClass}>Recovery</NavLink>
             <NavLink to="/supplements" className={linkClass}>Supplements</NavLink>
-            <Link to="/#pricing" className="px-3 py-2 rounded-lg hover:bg-[color:var(--cream-88)] hover:text-[#0a0a0b] transition-colors">Pricing</Link>
-            <Link to="/#contact" className="px-3 py-2 rounded-lg hover:bg-[color:var(--cream-88)] hover:text-[#0a0a0b] transition-colors">Contact</Link>
+            <NavLink to="/pricing" className={linkClass}>Pricing</NavLink>
+            <NavLink to="/contact" className={linkClass}>Contact</NavLink>
           </nav>
         </div>
         <a

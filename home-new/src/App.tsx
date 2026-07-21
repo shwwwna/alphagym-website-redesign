@@ -5,6 +5,8 @@ import Classes from './pages/Classes';
 import Facility from './pages/Facility';
 import Recovery from './pages/Recovery';
 import Supplements from './pages/Supplements';
+import Contact from './pages/Contact';
+import Pricing from './pages/Pricing';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/facility" element={<Facility />} />
           <Route path="/recovery" element={<Recovery />} />
           <Route path="/supplements" element={<Supplements />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/pricing" element={<Pricing />} />
         </Route>
       </Routes>
     </BrowserRouter>
