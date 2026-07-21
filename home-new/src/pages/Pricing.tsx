@@ -1,5 +1,6 @@
 import Label from '../components/Label';
 import PageHero from '../components/PageHero';
+import ArgoElevateCta from '../components/ArgoElevateCta';
 import ByqTag from '../components/ByqTag';
 
 const MEMBERSHIP_URL = 'https://myaccount.clubfit.net.au/onlineoffers?code=ALPHAGYM&accountId=1&showall=true';
@@ -126,22 +127,17 @@ function Pricing() {
               Add-ons &amp; partner access
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-3 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--depth)] p-8">
-              <div className="text-[color:var(--cream)] text-xl font-medium">Argo Elevate members</div>
-              <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">
-                Complimentary 24/7 Alpha Gym access for active Argo Pilates "Elevate" members. No fees, no contract — access stays valid while your Elevate membership is active.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--depth)] p-8">
-              <div className="text-[color:var(--cream)] text-xl font-medium">Fitness Passport</div>
-              <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">
-                24/7 access plus unlimited group classes via Fitness Passport, with a one-off $49 joining fee and a complimentary Evolt body scan + consult.
-              </p>
-            </div>
+          <div className="max-w-[560px] flex flex-col gap-3 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--depth)] p-8">
+            <div className="text-[color:var(--cream)] text-xl font-medium">Fitness Passport</div>
+            <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">
+              24/7 access plus unlimited group classes via Fitness Passport, with a one-off $49 joining fee and a complimentary Evolt body scan + consult.
+            </p>
           </div>
         </div>
       </section>
+
+      {/* Argo Elevate — byq: offthegrid-cta-1 / sound-stories-cta-1 (CtaBanner) */}
+      <ArgoElevateCta />
     </>
   );
 }

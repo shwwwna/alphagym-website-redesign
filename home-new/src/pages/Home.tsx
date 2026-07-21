@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Label from '../components/Label';
+import ArgoElevateCta from '../components/ArgoElevateCta';
 import ByqTag from '../components/ByqTag';
 
 const MEMBERSHIP_URL = 'https://myaccount.clubfit.net.au/onlineoffers?code=ALPHAGYM&accountId=1&showall=true';
@@ -100,13 +101,14 @@ function Home() {
         </div>
       </section>
 
-      {/* Day Pass — byq: modulabs-hero-2 (CtaBanner layout, single-offer callout) */}
+      {/* Day Pass — byq: halden-miller-cta-3 (spotlight card, single-offer callout) */}
       <section className="relative py-20 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]">
-        <ByqTag>modulabs-hero-2</ByqTag>
-        <div className="max-w-[1800px] mx-auto flex flex-wrap items-center justify-between gap-8 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--lift)] p-8 md:p-12">
-          <div className="flex flex-col gap-4 max-w-[600px]">
+        <ByqTag>halden-miller-cta-3</ByqTag>
+        <div className="relative overflow-hidden max-w-[1800px] mx-auto flex flex-wrap items-center justify-between gap-8 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--depth)] p-8 md:p-16">
+          <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[color:var(--accent)] blur-[160px] opacity-25 pointer-events-none" />
+          <div className="relative z-10 flex flex-col gap-4 max-w-[600px]">
             <Label>Not ready to commit?</Label>
-            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[40px] leading-[40px] tracking-[-1px]">
+            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[48px] md:text-[56px] leading-[1.05] tracking-[-1.5px]">
               Try a 1 Day Pass — <span className="text-[color:var(--accent)]">$15</span>
             </h2>
             <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">
@@ -115,13 +117,16 @@ function Home() {
           </div>
           <a
             href={MEMBERSHIP_URL}
-            className="relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
+            className="relative z-10 flex items-center gap-2 px-6 py-4 rounded-full text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
           >
             <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
             Get a Day Pass
           </a>
         </div>
       </section>
+
+      {/* Argo Elevate — byq: offthegrid-cta-1 / sound-stories-cta-1 (CtaBanner) */}
+      <ArgoElevateCta />
 
       {/* Pricing teaser — byq: modulabs-pricing-1 */}
       <section id="pricing" className="relative py-20 px-8 bg-[color:var(--bg)]">
@@ -273,21 +278,22 @@ function Home() {
         </div>
       </section>
 
-      {/* Instagram social — byq: dark-tech-logos-2, adapted into a single follow callout */}
-      <section className="relative py-20 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]">
-        <ByqTag>dark-tech-logos-2</ByqTag>
-        <div className="max-w-[1800px] mx-auto flex flex-wrap items-center justify-between gap-8 rounded-lg border border-[color:var(--cream-16)] bg-[color:var(--lift)] p-8 md:p-12">
-          <div className="flex flex-col gap-2 max-w-[600px]">
-            <Label>Follow along</Label>
-            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[32px] leading-[36px] tracking-[-1px]">
-              Follow @alphagym.au for promos, events &amp; community announcements.
-            </h2>
+      {/* Follow along — byq: sound-stories-cta-1 (inverted pill-CTA social banner) */}
+      <section className="relative py-24 px-8 bg-[color:var(--cream)] border-t border-[color:var(--cream-16)]">
+        <ByqTag>sound-stories-cta-1</ByqTag>
+        <div className="max-w-[1000px] mx-auto flex flex-col items-center text-center gap-8">
+          <div className="flex items-center gap-3 text-[#0a0a0b]">
+            <span className="w-2 h-2 rounded-sm bg-[color:var(--accent-dark)]" />
+            <span className="font-mono-label">Follow along</span>
           </div>
+          <h2 className="m-0 text-[#0a0a0b] font-normal text-[40px] md:text-[48px] leading-[1.1] tracking-[-1.5px]">
+            Promos, events &amp; community announcements — straight from the floor.
+          </h2>
           <a
             href="https://www.instagram.com/alphagym.au/"
-            className="relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[color:var(--cream)] border border-[color:var(--cream-16)]"
+            className="relative flex items-center gap-2 px-6 py-4 rounded-full text-sm font-medium text-[color:var(--cream)] bg-[#0a0a0b]"
           >
-            @alphagym.au
+            @alphagym.au on Instagram
           </a>
         </div>
       </section>

@@ -62,12 +62,14 @@ function Recovery() {
         </div>
       </section>
 
-      {/* byq: modulabs-hero-2 (CtaBanner, trimmed to heading + buttons) */}
+      {/* byq: offthegrid-cta-1 / sound-stories-cta-1 (CtaBanner) */}
       <CtaBanner
-        title="Ready to recover?"
+        label="Ready to recover?"
+        title="Rest, reset, repeat."
+        description="Book your ice bath, sauna or Normatec session — bookings essential."
         actions={[
-          { label: '@alpharecovery_woonona', href: 'https://www.instagram.com/alpharecovery_woonona/?hl=en' },
-          { label: 'Recovery Membership', href: 'https://myaccount.clubfit.net.au/onlineoffers/membership/177?code=ALPHAGYM&accountId=1%20&sidebar=true&single=true', primary: true },
+          { label: 'Follow @alpharecovery_woonona on Instagram', href: 'https://www.instagram.com/alpharecovery_woonona/?hl=en' },
+          { label: 'Sign up for Recovery Membership', href: 'https://myaccount.clubfit.net.au/onlineoffers/membership/177?code=ALPHAGYM&accountId=1%20&sidebar=true&single=true', primary: true },
         ]}
       />
     </>

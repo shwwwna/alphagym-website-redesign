@@ -1,3 +1,4 @@
+import Label from '../components/Label';
 import PageHero from '../components/PageHero';
 import CtaBanner from '../components/CtaBanner';
 import ByqTag from '../components/ByqTag';
@@ -99,7 +100,35 @@ function Facility() {
         </div>
       </section>
 
-      {/* byq: modulabs-hero-2 (CtaBanner, trimmed to heading + buttons) */}
+      {/* Gallery — byq: modulabs-stats-3 (wide image grid variant) */}
+      <section className="relative py-20 px-8 bg-[color:var(--lift)] border-t border-[color:var(--cream-16)]">
+        <div className="max-w-[1800px] mx-auto flex flex-col gap-8">
+          <ByqTag>modulabs-stats-3</ByqTag>
+          <div className="flex flex-col gap-6 max-w-[680px]">
+            <Label>Gallery</Label>
+            <h2 className="m-0 text-[color:var(--cream)] font-normal text-[48px] leading-[48px] tracking-[-2px]">
+              Around the floor
+            </h2>
+          </div>
+          <div className="grid gap-4">
+            {[
+              'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1800&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1800&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1800&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1800&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop',
+            ].map((img) => (
+              <div
+                key={img}
+                className="w-full aspect-[21/9] rounded-lg bg-cover bg-center border border-[color:var(--cream-16)]"
+                style={{ backgroundImage: `url('${img}')` }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* byq: offthegrid-cta-1 / sound-stories-cta-1 (CtaBanner) */}
       <CtaBanner
         title="See it for yourself."
         actions={[

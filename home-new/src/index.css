@@ -24,9 +24,11 @@ body {
   font-family: 'Geist', Arial, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 .font-mono-label {
