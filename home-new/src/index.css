@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a0b;
+  --lift: #121212;
+  --depth: #212122;
+  --cream: #f6f3ec;
+  --cream-88: rgba(246, 243, 236, 0.88);
+  --cream-64: rgba(246, 243, 236, 0.64);
+  --cream-16: rgba(246, 243, 236, 0.16);
+  --cream-08: rgba(246, 243, 236, 0.08);
+  --accent: #65FDF1;
+  --accent-dark: #0a2f2c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--cream-88);
+  font-family: 'Geist', Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-mono-label {
+  font-family: 'Geist Mono', Arial, sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 300;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+}
