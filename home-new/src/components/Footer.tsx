@@ -23,13 +23,13 @@ function Footer() {
               <div className="flex flex-col gap-1">
                 <Link to="/pricing" className="text-[color:var(--cream-88)]">Memberships</Link>
                 <Link to="/contact" className="text-[color:var(--cream-88)]">Contact</Link>
-                <a href="https://www.alphagym-barbershop.com.au" className="text-[color:var(--cream-88)]">Barbershop</a>
+                <a href="https://alphabarbershopwoonona.com/" className="text-[color:var(--cream-88)]">Barbershop</a>
               </div>
             </div>
             <div className="flex flex-col gap-5">
               <div className="font-mono-label text-[color:var(--cream-64)]">Follow</div>
               <div className="flex flex-col gap-1">
-                <a href="https://www.instagram.com/alphagym_woonona/" className="text-[color:var(--cream-88)]">Instagram</a>
+                <a href="https://www.instagram.com/alphagym.au/" className="text-[color:var(--cream-88)]">Instagram</a>
                 <a href="https://www.facebook.com/alphagymwoonona" className="text-[color:var(--cream-88)]">Facebook</a>
               </div>
             </div>

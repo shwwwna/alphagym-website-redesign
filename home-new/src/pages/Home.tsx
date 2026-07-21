@@ -28,15 +28,23 @@ function Home() {
             <p className="text-[color:var(--cream-64)] text-base leading-6 max-w-[520px]">
               650m² of state-of-the-art training space, group classes, recovery, supplements and a barbershop — all under one roof in the Northern Illawarra.
             </p>
-            <a
-              href="#pricing"
-              className="self-start relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
-            >
-              <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
-              See Membership Plans
-            </a>
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href={MEMBERSHIP_URL}
+                className="self-start relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
+              >
+                <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />
+                Be a Member
+              </a>
+              <a
+                href="https://classpass.com/studios/alpha-gym-woonona"
+                className="self-start relative flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-[color:var(--cream)] border border-[color:var(--cream-16)]"
+              >
+                ClassPass
+              </a>
+            </div>
             <p className="text-[color:var(--cream-64)] text-sm">
-              Staffed hours plus 24/7 swipe access — the gym floor is open around the clock.
+              Join today, train tonight — staffed hours plus 24/7 swipe access, the gym floor is open around the clock.
             </p>
           </div>
         </div>
@@ -165,7 +173,7 @@ function Home() {
                   </span>
                 </div>
                 <a
-                  href="#"
+                  href={MEMBERSHIP_URL}
                   className="relative flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-[#0a0a0b] bg-[color:var(--cream)]"
                 >
                   <span className="w-2 h-2 rounded-sm bg-[color:var(--accent)]" />

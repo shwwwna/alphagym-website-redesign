@@ -26,6 +26,7 @@ function Navbar() {
             <NavLink to="/supplements" className={linkClass}>Supplements</NavLink>
             <NavLink to="/pricing" className={linkClass}>Pricing</NavLink>
             <NavLink to="/contact" className={linkClass}>Contact</NavLink>
+            <a href="https://alphabarbershopwoonona.com/" className={linkClass({ isActive: false })}>Barbershop</a>
           </nav>
         </div>
         <a
