@@ -6,28 +6,33 @@ import InsightsCards from '../components/InsightsCards';
 import VideoShowcase from '../components/VideoShowcase';
 import TwoColCta from '../components/TwoColCta';
 import ContactGrid from '../components/ContactGrid';
+import EditableImage from '../components/EditableImage';
+import type { ImageKey } from '../lib/editableImages';
 
 const MEMBERSHIP_URL = 'https://myaccount.clubfit.net.au/onlineoffers?code=ALPHAGYM&accountId=1&showall=true';
 const INSTAGRAM_URL = 'https://www.instagram.com/alphagym.au/';
 
-const COACHING = [
+const COACHING: { title: string; hook: string; body: string; cta: string; imageKey: ImageKey }[] = [
   {
     title: 'Personal Training',
     hook: 'Ready to turn it up a gear?',
     body: 'One-on-one. Your trainer. Your program. Built around your goals from day one — correct technique, real accountability, every session pushed to your best.',
     cta: 'Book a session',
+    imageKey: 'home.coaching.personalTraining',
   },
   {
     title: 'Group Classes',
     hook: "Everyone's training for something different.",
     body: "That's why we run a full range of classes to suit every level and skill. Check the timetable to see what's on.",
     cta: 'Join a class',
+    imageKey: 'home.coaching.groupClasses',
   },
   {
     title: 'Nutritional Guidance',
     hook: 'Training is only half the job.',
     body: "Nutrition accounts for around 80% of your results — it's not an exaggeration, it's the numbers. If you're serious about your goals, book a consultation and your trainer will build a strategic, personalised nutrition plan around you.",
     cta: 'Book In',
+    imageKey: 'home.coaching.nutrition',
   },
 ];
 
@@ -37,13 +42,10 @@ function Home() {
       {/* Hero — byq: modulabs-hero-4 */}
       <header
         id="top"
-        className="relative flex min-h-screen flex-col items-start justify-end bg-cover bg-center pt-[200px] pb-16 px-8"
-        style={{
-          backgroundImage:
-            "linear-gradient(0deg, #0a0a0b, rgba(10,10,11,0)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop')",
-          backgroundBlendMode: 'normal',
-        }}
+        className="relative flex min-h-screen flex-col items-start justify-end pt-[200px] pb-16 px-8 overflow-hidden"
       >
+        <EditableImage imageKey="home.hero" className="absolute inset-0 z-0" />
+        <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: 'linear-gradient(0deg, #0a0a0b, rgba(10,10,11,0))' }} />
         <ByqTag>modulabs-hero-4</ByqTag>
         <div className="relative z-10 max-w-[1800px] mx-auto w-full">
           <div className="max-w-[680px] flex flex-col gap-6">
@@ -95,6 +97,7 @@ function Home() {
         ]}
         actions={[{ label: 'Read more', href: '/facility', primary: true }]}
         imageSide="left"
+        imageKey="home.facility"
       />
 
       {/* Classes & Coaching — byq: modulabs-cms-grid-3 (insights blog grid, 3-col) */}
@@ -116,7 +119,7 @@ function Home() {
                 key={c.title}
                 className="flex flex-col rounded-lg overflow-hidden border border-[color:var(--cream-16)] bg-[color:var(--lift)]"
               >
-                <div className="h-52 bg-[color:var(--depth)]" />
+                <EditableImage imageKey={c.imageKey} className="h-52 bg-[color:var(--depth)]" />
                 <div className="flex flex-col gap-3 p-8 grow">
                   <div className="text-[color:var(--cream)] text-xl font-medium">{c.title}</div>
                   <div className="text-[color:var(--cream-88)] text-base font-medium">{c.hook}</div>
@@ -153,6 +156,7 @@ function Home() {
           { label: 'Follow on Instagram', href: 'https://www.instagram.com/alpharecovery_woonona/?hl=en' },
         ]}
         imageSide="right"
+        imageKey="home.recovery"
       />
 
       {/* Supplements & Barbershop — byq: modulabs-cms-grid-3 */}
@@ -168,6 +172,7 @@ function Home() {
               { label: 'Follow on Instagram', href: 'https://www.instagram.com/alphasupps_woonona/?hl=en' },
             ],
             imageSide: 'left',
+            imageKey: 'home.supplements',
           },
           {
             eyebrow: 'Look sharp',
@@ -178,6 +183,7 @@ function Home() {
               { label: 'Follow on Instagram', href: 'https://www.instagram.com/alphabarbershopwoonona/' },
             ],
             imageSide: 'right',
+            imageKey: 'home.barbershop',
           },
         ]}
       />

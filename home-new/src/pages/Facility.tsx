@@ -2,6 +2,8 @@ import Label from '../components/Label';
 import PageHero from '../components/PageHero';
 import CtaBanner from '../components/CtaBanner';
 import ByqTag from '../components/ByqTag';
+import EditableImage from '../components/EditableImage';
+import type { ImageKey } from '../lib/editableImages';
 
 const columns: [string, string[]][] = [
   [
@@ -46,7 +48,7 @@ function Facility() {
         label="The Facility"
         title={<>650m² of <span className="text-[color:var(--cream-64)]">serious kit.</span></>}
         description="Open 24/7, 365 days a year. Everything you need to train, and plenty you won't find anywhere else in the Illawarra."
-        image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1600&auto=format&fit=crop"
+        imageKey="facility.hero"
       />
 
       {/* Stats — byq: modulabs-stats-3 */}
@@ -88,14 +90,8 @@ function Facility() {
           {/* byq: modulabs-stats-3 (image grid variant of the stat-block layout) */}
           <div className="relative grid md:grid-cols-2 gap-4 min-h-[420px]">
             <ByqTag>modulabs-stats-3</ByqTag>
-            <div
-              className="rounded-lg bg-cover bg-center min-h-[280px]"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1200&auto=format&fit=crop')" }}
-            />
-            <div
-              className="rounded-lg bg-cover bg-center min-h-[280px]"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1200&auto=format&fit=crop')" }}
-            />
+            <EditableImage imageKey="facility.statImage1" className="rounded-lg min-h-[280px]" />
+            <EditableImage imageKey="facility.statImage2" className="rounded-lg min-h-[280px]" />
           </div>
         </div>
       </section>
@@ -111,17 +107,11 @@ function Facility() {
             </h2>
           </div>
           <div className="grid gap-4">
-            {[
-              'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1800&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1800&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1800&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1800&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop',
-            ].map((img) => (
-              <div
-                key={img}
-                className="w-full aspect-[21/9] rounded-lg bg-cover bg-center border border-[color:var(--cream-16)]"
-                style={{ backgroundImage: `url('${img}')` }}
+            {(['facility.gallery.1', 'facility.gallery.2', 'facility.gallery.3', 'facility.gallery.4', 'facility.gallery.5'] as ImageKey[]).map((key) => (
+              <EditableImage
+                key={key}
+                imageKey={key}
+                className="w-full aspect-[21/9] rounded-lg border border-[color:var(--cream-16)]"
               />
             ))}
           </div>

@@ -66,7 +66,7 @@ function Pricing() {
         label="Pricing"
         title={<>Simple pricing. <span className="text-[color:var(--cream-64)]">No lock-in.</span></>}
         description="Every plan is no lock-in, cancel anytime, no cancellation fee. Pick what fits — upgrade, downgrade or pause whenever you need to."
-        image="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop"
+        imageKey="pricing.hero"
       />
 
       {/* Pricing — byq: modulabs-pricing-1 */}

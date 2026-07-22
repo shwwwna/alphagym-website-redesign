@@ -10,7 +10,7 @@ function Contact() {
         label="Contact"
         title={<>Start <span className="text-[color:var(--cream-64)]">today.</span></>}
         description="1/417–421 Princes Hwy, Woonona NSW 2517 · Open 24/7, 365 days a year."
-        image="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop"
+        imageKey="contact.hero"
       />
 
       {/* Contact — byq: modulabs-contact-1 */}

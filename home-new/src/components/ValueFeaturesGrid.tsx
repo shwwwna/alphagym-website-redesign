@@ -1,5 +1,7 @@
 import Label from './Label';
 import ByqTag from './ByqTag';
+import EditableImage from './EditableImage';
+import type { ImageKey } from '../lib/editableImages';
 
 type Action = { label: string; href: string; primary?: boolean };
 
@@ -15,6 +17,7 @@ function ValueFeaturesGrid({
   items,
   actions,
   imageSide = 'left',
+  imageKey,
 }: {
   id?: string;
   eyebrow: string;
@@ -24,6 +27,7 @@ function ValueFeaturesGrid({
   items: string[];
   actions: Action[];
   imageSide?: 'left' | 'right';
+  imageKey: ImageKey;
 }) {
   const imageOrder = imageSide === 'left' ? 'md:order-1' : 'md:order-2';
   const contentOrder = imageSide === 'left' ? 'md:order-2' : 'md:order-1';
@@ -33,8 +37,10 @@ function ValueFeaturesGrid({
       <ByqTag>modulabs-value-features-10</ByqTag>
       <div className="max-w-[1800px] mx-auto">
         <div className="grid md:grid-cols-[1fr_1.5fr] rounded-lg overflow-hidden border border-[color:var(--cream-16)] bg-[color:var(--lift)]">
-          {/* Image slot (empty depth block) */}
-          <div className={`relative min-h-[280px] md:min-h-[560px] bg-[color:var(--depth)] ${imageOrder}`} />
+          <EditableImage
+            imageKey={imageKey}
+            className={`min-h-[280px] md:min-h-[560px] bg-[color:var(--depth)] ${imageOrder}`}
+          />
 
           {/* Content */}
           <div className={`flex flex-col justify-between ${contentOrder}`}>

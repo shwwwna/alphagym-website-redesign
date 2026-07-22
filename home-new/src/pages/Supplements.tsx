@@ -2,6 +2,8 @@ import PageHero from '../components/PageHero';
 import TagList from '../components/TagList';
 import CtaBanner from '../components/CtaBanner';
 import ByqTag from '../components/ByqTag';
+import EditableImage from '../components/EditableImage';
+import type { ImageKey } from '../lib/editableImages';
 
 function Supplements() {
   return (
@@ -11,7 +13,7 @@ function Supplements() {
         label="Alpha Supps"
         title={<>Fuel <span className="text-[color:var(--cream-64)]">the work.</span></>}
         description="The widest variety of pre-workouts, proteins and health supplements from the industry's most popular brands — at extremely competitive prices."
-        image="https://images.unsplash.com/photo-1579722820258-8d4b3e2e5b1e?q=80&w=1600&auto=format&fit=crop"
+        imageKey="supplements.hero"
       />
 
       {/* Stocked for every goal + hours — byq: modulabs-value-features-5 two-block layout */}
@@ -57,15 +59,11 @@ function Supplements() {
       <section className="relative pb-20 px-8 bg-[color:var(--bg)]">
         <ByqTag>modulabs-stats-3</ByqTag>
         <div className="max-w-[1800px] mx-auto grid md:grid-cols-3 gap-4 min-h-[320px]">
-          {[
-            'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=1200&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=1200&auto=format&fit=crop',
-          ].map((img) => (
-            <div
-              key={img}
-              className="rounded-lg bg-cover bg-center min-h-[280px] border border-[color:var(--cream-16)]"
-              style={{ backgroundImage: `url('${img}')` }}
+          {(['supplements.product.1', 'supplements.product.2', 'supplements.product.3'] as ImageKey[]).map((key) => (
+            <EditableImage
+              key={key}
+              imageKey={key}
+              className="rounded-lg min-h-[280px] border border-[color:var(--cream-16)]"
             />
           ))}
         </div>

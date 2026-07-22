@@ -1,5 +1,7 @@
 import Label from './Label';
 import ByqTag from './ByqTag';
+import EditableImage from './EditableImage';
+import type { ImageKey } from '../lib/editableImages';
 
 type Action = { label: string; href: string; primary?: boolean };
 
@@ -10,6 +12,7 @@ export type InsightCard = {
   meta?: string[];
   actions: Action[];
   imageSide?: 'left' | 'right';
+  imageKey: ImageKey;
 };
 
 // Insights Grid Blog Layout — byq: modulabs-cms-grid-3
@@ -28,8 +31,10 @@ function InsightsCards({ id, cards }: { id?: string; cards: InsightCard[] }) {
               key={card.title}
               className="grid md:grid-cols-2 rounded-lg overflow-hidden border border-[color:var(--cream-16)] bg-[color:var(--lift)]"
             >
-              {/* Image slot (empty depth block) */}
-              <div className={`relative min-h-[240px] md:min-h-[420px] bg-[color:var(--depth)] ${imageOrder}`} />
+              <EditableImage
+                imageKey={card.imageKey}
+                className={`min-h-[240px] md:min-h-[420px] bg-[color:var(--depth)] ${imageOrder}`}
+              />
 
               {/* Content */}
               <div className={`flex flex-col justify-between gap-12 p-8 md:p-12 ${contentOrder}`}>

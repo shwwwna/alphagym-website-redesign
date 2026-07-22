@@ -3,6 +3,8 @@ import PageHero from '../components/PageHero';
 import CtaBanner from '../components/CtaBanner';
 import ContactFormCard from '../components/ContactFormCard';
 import ByqTag from '../components/ByqTag';
+import EditableImage from '../components/EditableImage';
+import type { ImageKey } from '../lib/editableImages';
 
 const timetable: { day: string; classes: { time: string; name: string }[] }[] = [
   { day: 'Mon', classes: [{ time: '6:00am', name: 'HIIT' }, { time: '9:30am', name: 'Boxing' }, { time: '5:30pm', name: 'Strength' }] },
@@ -22,7 +24,7 @@ function Classes() {
         label="Group Classes & Coaching"
         title={<>Every level. <span className="text-[color:var(--cream-64)]">Every goal.</span></>}
         description="Classes for all ages and abilities, or individual training at your own pace — we can help."
-        image="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop"
+        imageKey="classes.hero"
       />
 
       {/* Timetable — byq: modulabs-value-features-5 (header row pattern) */}
@@ -81,23 +83,20 @@ function Classes() {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
-            {[
+            {([
               [
                 'Personal Training',
                 "Ready to turn your training up a gear? Your trainer builds a personalised program around your goals, teaches correct technique and pushes you to your best every session.",
-                'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1200&auto=format&fit=crop',
+                'classes.personalTraining',
               ],
               [
                 'Nutritional Guidance',
                 "Nutrition accounts for around 80% of your results. Book a consultation and our trainers will build a strategic, personalised nutrition plan just for you.",
-                'https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop',
+                'classes.nutrition',
               ],
-            ].map(([title, desc, img]) => (
+            ] as [string, string, ImageKey][]).map(([title, desc, imageKey]) => (
               <div key={title} className="flex flex-col rounded-lg overflow-hidden border border-[color:var(--cream-16)] bg-[color:var(--bg)]">
-                <div
-                  className="h-64 bg-cover bg-center"
-                  style={{ backgroundImage: `url('${img}')` }}
-                />
+                <EditableImage imageKey={imageKey} className="h-64" />
                 <div className="flex flex-col gap-4 p-8">
                   <div className="text-[color:var(--cream)] text-xl font-medium">{title}</div>
                   <p className="text-[color:var(--cream-64)] text-base leading-6 m-0">{desc}</p>
