@@ -4,6 +4,7 @@ import ByqTag from '../components/ByqTag';
 import ValueFeaturesGrid from '../components/ValueFeaturesGrid';
 import InsightsCards from '../components/InsightsCards';
 import VideoShowcase from '../components/VideoShowcase';
+import InstagramReels from '../components/InstagramReels';
 import TwoColCta from '../components/TwoColCta';
 import ContactGrid from '../components/ContactGrid';
 import EditableImage from '../components/EditableImage';
@@ -190,6 +191,13 @@ function Home() {
 
       {/* Video — byq: birkform-video-1 (placeholder) */}
       <VideoShowcase heading="See inside Alpha Gym Woonona" />
+
+      {/* Instagram Reels — byq: modulabs-video-1 (adapted, placeholder) */}
+      <InstagramReels
+        eyebrow="Promos, events & community"
+        heading="Straight from the floor"
+        profileUrl={INSTAGRAM_URL}
+      />
 
       {/* Day Pass + Argo Elevate — byq: halden-miller-cta-3 (2-col CTA) */}
       <TwoColCta
