@@ -22,7 +22,17 @@ const cards: Card[] = [
     ),
   },
   { label: 'Address', value: <>1/417–421 Princes Hwy,<br />Woonona NSW 2517</> },
-  { label: 'Hours', value: <>Open 24/7 · 365 days a year</> },
+  { label: '24/7 Access', value: <>Open 24/7 · 365 days a year</> },
+  {
+    label: 'Staffed Hours',
+    value: (
+      <>
+        Mon–Thu 8am–12pm & 3pm–7pm
+        <br />
+        Fri–Sat 8am–12pm
+      </>
+    ),
+  },
 ];
 
 function InfoCard({ card }: { card: Card }) {
@@ -42,7 +52,7 @@ function InfoCard({ card }: { card: Card }) {
 // Contact Grid with Info Cards — byq: forerunner-contact-2 (adapted to dark theme)
 // Centered header + 4-column grid of contact cards with a tall image slot.
 function ContactGrid({ id }: { id?: string }) {
-  const [phone, instagram, email, address, hours] = cards;
+  const [phone, instagram, email, address, access, staffedHours] = cards;
 
   return (
     <section id={id} className="relative py-24 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]">
@@ -67,7 +77,8 @@ function ContactGrid({ id }: { id?: string }) {
           <InfoCard card={instagram} />
           <InfoCard card={email} />
           <InfoCard card={address} />
-          <InfoCard card={hours} />
+          <InfoCard card={access} />
+          <InfoCard card={staffedHours} />
         </div>
       </div>
     </section>

@@ -5,7 +5,8 @@ const info: [string, string][] = [
   ['Phone', '+61 2 4285 5591'],
   ['Email', 'woonona@alphagymfitness.com.au'],
   ['Address', '1/417–421 Princes Hwy, Woonona NSW'],
-  ['Hours', 'Open 24/7 · 365 days a year'],
+  ['24/7 Access', 'Open 24/7 · 365 days a year'],
+  ['Staffed Hours', 'Mon–Thu 8am–12pm & 3pm–7pm · Fri–Sat 8am–12pm'],
 ];
 
 // Shared two-column form card — byq: modulabs-contact-1
