@@ -46,9 +46,7 @@ function Footer() {
           </div>
         </div>
         <div className="flex justify-between items-end gap-8 flex-wrap">
-          <span className="text-lg font-semibold text-[color:var(--cream)]">
-            ALPHA<span className="text-[color:var(--accent)]">.</span>GYM
-          </span>
+          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Alpha Gym & Fitness Centre" className="h-10 w-auto" />
           <div className="font-mono-label text-[color:var(--cream-64)] text-right">
             © 2026 Alpha Gym &amp; Fitness Centre
           </div>

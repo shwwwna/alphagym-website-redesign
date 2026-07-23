@@ -15,8 +15,8 @@ function Navbar() {
       <ByqTag>modulabs-navigation-bar1</ByqTag>
       <div className="max-w-[1800px] mx-auto flex justify-between items-center">
         <div className="flex items-center gap-5 px-4 py-2 border border-[color:var(--cream-16)] rounded-lg bg-[#18181880] backdrop-blur-sm">
-          <Link to="/" className="font-semibold text-lg tracking-wide text-[color:var(--cream)]">
-            ALPHA<span className="text-[color:var(--accent)]">.</span>GYM
+          <Link to="/" className="flex items-center">
+            <img src={`${import.meta.env.BASE_URL}images/logo-mark.png`} alt="Alpha Gym" className="h-5 w-auto" />
           </Link>
           <div className="w-px h-5 bg-[color:var(--cream-16)]" />
           <nav className="flex items-center gap-1 text-xs font-medium">
