@@ -32,7 +32,7 @@ function TwoColCta({
             {heading}
           </h2>
         )}
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           {cards.map((card) => (
             <div
               key={card.action.label}
