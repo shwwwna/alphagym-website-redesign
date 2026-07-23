@@ -358,7 +358,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Start today + Follow along — byq: halden-miller-cta-3 (2-col CTA) */}
+      {/* Start today + Follow along — byq: halden-miller-cta-3, stacked 1-col per offthegrid-cta-1 */}
       <TwoColCta
         cards={[
           {
