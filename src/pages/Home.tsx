@@ -67,8 +67,8 @@ function Home() {
               <span className="text-[color:var(--cream-64)]">Repeat.</span>
             </h1>
             <p className="text-[color:var(--cream-64)] text-base leading-6 max-w-[520px]">
-              The Illawarra's only train-recover-and-reset facility — gym, ice
-              bath &amp; sauna, supplements and a barbershop under one roof in
+              The Illawarra's train-recover-and-reset facility — gym, ice bath
+              &amp; sauna, supplements and a barbershop under one roof in
               Woonona. 650m² of floor, open 24/7.
             </p>
             <div className="flex flex-col gap-2">

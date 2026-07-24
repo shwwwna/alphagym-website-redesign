@@ -8,12 +8,12 @@
 export const DEFAULT_IMAGES = {
   "home.hero": `${import.meta.env.BASE_URL}images/home-hero.webp`,
   "home.facility": `${import.meta.env.BASE_URL}images/home-facility.webp`,
-  "home.supplements": "",
-  "home.barbershop": "",
-  "home.coaching.personalTraining": "",
-  "home.coaching.groupClasses": "",
-  "home.coaching.nutrition": "",
-  "home.recovery": "",
+  "home.supplements": `${import.meta.env.BASE_URL}images/supplements.png`,
+  "home.barbershop": `${import.meta.env.BASE_URL}images/barbershop.png`,
+  "home.coaching.personalTraining": `${import.meta.env.BASE_URL}images/home-coaching-personalTraining.png`,
+  "home.coaching.groupClasses": `${import.meta.env.BASE_URL}images/home-coaching-groupClasses.png`,
+  "home.coaching.nutrition": `${import.meta.env.BASE_URL}images/home-coaching-nutrition.png`,
+  "home.recovery": `${import.meta.env.BASE_URL}images/home-hero.webp`,
 
   "facility.hero": `${import.meta.env.BASE_URL}images/facility-hero.webp`,
   "facility.gallery.1": `${import.meta.env.BASE_URL}images/facility/facility-1.webp`,
@@ -28,33 +28,22 @@ export const DEFAULT_IMAGES = {
   "facility.gallery.10": `${import.meta.env.BASE_URL}images/facility/facility-10.webp`,
 
   "classes.hero": `${import.meta.env.BASE_URL}images/facility/facility-3.webp`,
-  "classes.personalTraining":
-    "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1200&auto=format&fit=crop",
-  "classes.nutrition":
-    "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1200&auto=format&fit=crop",
+  "classes.personalTraining": `${import.meta.env.BASE_URL}images/home-coaching-personalTraining.png`,
+  "classes.nutrition": `${import.meta.env.BASE_URL}images/home-coaching-nutrition.png`,
 
   "recovery.hero": `${import.meta.env.BASE_URL}images/facility/facility-4.webp`,
-  "recovery.iceBath":
-    "https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?q=80&w=1200&auto=format&fit=crop",
-  "recovery.sauna":
-    "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop",
-  "recovery.beautyBar":
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200&auto=format&fit=crop",
+  "recovery.iceBath": `${import.meta.env.BASE_URL}images/ice-bath.png`,
+  "recovery.sauna": `${import.meta.env.BASE_URL}images/sauna.png`,
+  "recovery.beautyBar": `${import.meta.env.BASE_URL}images/fitactiv.png`,
 
-  "supplements.hero":
-    "https://images.unsplash.com/photo-1579722820258-8d4b3e2e5b1e?q=80&w=1600&auto=format&fit=crop",
-  "supplements.product.1":
-    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop",
-  "supplements.product.2":
-    "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=1200&auto=format&fit=crop",
-  "supplements.product.3":
-    "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=1200&auto=format&fit=crop",
+  "supplements.hero": `${import.meta.env.BASE_URL}images/facility/facility-10.webp`,
+  "supplements.product.1": `${import.meta.env.BASE_URL}images/supplements.png`,
+  "supplements.product.2": `${import.meta.env.BASE_URL}images/supplements-2.png`,
+  "supplements.product.3": `${import.meta.env.BASE_URL}images/supplements-3.png`,
 
-  "pricing.hero":
-    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop",
+  "pricing.hero": `${import.meta.env.BASE_URL}images/facility/facility-7.webp`,
 
-  "contact.hero":
-    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop",
+  "contact.hero": `${import.meta.env.BASE_URL}images/facility/facility-9.webp`,
 } as const;
 
 export type ImageKey = keyof typeof DEFAULT_IMAGES;

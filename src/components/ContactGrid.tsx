@@ -1,30 +1,52 @@
-import Label from './Label';
-import ByqTag from './ByqTag';
+import Label from "./Label";
+import ByqTag from "./ByqTag";
 
 type Card = { label: string; value: React.ReactNode };
 
 const cards: Card[] = [
-  { label: 'Phone', value: <a href="tel:+61242855591" className="hover:text-[color:var(--cream)]">+61 2 4285 5591</a> },
   {
-    label: 'Instagram',
+    label: "Phone",
     value: (
-      <a href="https://www.instagram.com/alphagym.au/" className="hover:text-[color:var(--cream)]">
+      <a href="tel:+61242855591" className="hover:text-[color:var(--cream)]">
+        +61 2 4285 5591
+      </a>
+    ),
+  },
+  {
+    label: "Instagram",
+    value: (
+      <a
+        href="https://www.instagram.com/alphagym.au/"
+        className="hover:text-[color:var(--cream)]"
+      >
         @alphagym.au
       </a>
     ),
   },
   {
-    label: 'Email',
+    label: "Email",
     value: (
-      <a href="mailto:woonona@alphagymfitness.com.au" className="hover:text-[color:var(--cream)] break-all">
+      <a
+        href="mailto:woonona@alphagymfitness.com.au"
+        className="hover:text-[color:var(--cream)] break-all"
+      >
         woonona@alphagymfitness.com.au
       </a>
     ),
   },
-  { label: 'Address', value: <>1/417–421 Princes Hwy,<br />Woonona NSW 2517</> },
-  { label: '24/7 Access', value: <>Open 24/7 · 365 days a year</> },
   {
-    label: 'Staffed Hours',
+    label: "Address",
+    value: (
+      <>
+        1/417–421 Princes Hwy,
+        <br />
+        Woonona NSW 2517
+      </>
+    ),
+  },
+  { label: "24/7 Access", value: <>Open 24/7 · 365 days a year</> },
+  {
+    label: "Staffed Hours",
     value: (
       <>
         Mon–Thu 8am–12pm & 3pm–7pm
@@ -42,8 +64,12 @@ function InfoCard({ card }: { card: Card }) {
         <span className="w-3 h-3 rounded-sm bg-[color:var(--accent)]" />
       </div>
       <div className="flex flex-col gap-1">
-        <div className="text-[color:var(--cream)] text-base font-medium">{card.label}</div>
-        <div className="text-[color:var(--cream-64)] text-base">{card.value}</div>
+        <div className="text-[color:var(--cream)] text-base font-medium">
+          {card.label}
+        </div>
+        <div className="text-[color:var(--cream-64)] text-base">
+          {card.value}
+        </div>
       </div>
     </div>
   );
@@ -55,7 +81,10 @@ function ContactGrid({ id }: { id?: string }) {
   const [phone, instagram, email, address, access, staffedHours] = cards;
 
   return (
-    <section id={id} className="relative py-24 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]">
+    <section
+      id={id}
+      className="relative py-24 px-8 bg-[color:var(--bg)] border-t border-[color:var(--cream-16)]"
+    >
       <ByqTag>forerunner-contact-2</ByqTag>
       <div className="max-w-[1800px] mx-auto">
         {/* Header */}
@@ -65,15 +94,24 @@ function ContactGrid({ id }: { id?: string }) {
             Get in touch
           </h2>
           <p className="m-0 text-[color:var(--cream-64)] text-base leading-6">
-            Questions about membership, recovery bookings or Elevate access? Reach out — or just turn up and train.
+            Questions about membership, recovery bookings or Elevate access?
+            Reach out — or just turn up and train.
           </p>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
           <InfoCard card={phone} />
-          {/* Tall image slot (empty depth block) */}
-          <div className="hidden lg:block lg:row-span-2 rounded-lg bg-[color:var(--depth)] min-h-[200px]" />
+          <div className="lg:row-span-2 rounded-lg bg-[color:var(--depth)] min-h-[200px] overflow-hidden">
+            <iframe
+              title="Alpha Gym location (satellite view)"
+              src="https://maps.google.com/maps?q=1%2F417-421+Princes+Hwy%2C+Woonona+NSW+2517&t=k&z=17&output=embed"
+              className="w-full h-full min-h-[200px] border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
           <InfoCard card={instagram} />
           <InfoCard card={email} />
           <InfoCard card={address} />
