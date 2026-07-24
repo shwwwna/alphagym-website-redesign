@@ -6,14 +6,14 @@
 // code edits to make here to publish a change for real.
 
 export const DEFAULT_IMAGES = {
-  "home.hero": `${import.meta.env.BASE_URL}/home-hero.webp`,
-  "home.facility": `${import.meta.env.BASE_URL}/home-facility.webp`,
+  "home.hero": `${import.meta.env.BASE_URL}images/home-hero.webp`,
+  "home.facility": `${import.meta.env.BASE_URL}images/home-facility.webp`,
   "home.supplements": "",
   "home.barbershop": "",
-  "home.coaching.personalTraining": `${import.meta.env.BASE_URL}/home-coaching-personalTraining.png`,
-  "home.coaching.groupClasses": `${import.meta.env.BASE_URL}/home-coaching-groupClasses.png`,
-  "home.coaching.nutrition": `${import.meta.env.BASE_URL}/home-coaching-nutrition.png`,
-  "home.recovery": `${import.meta.env.BASE_URL}/home-recovery.png`,
+  "home.coaching.personalTraining": "",
+  "home.coaching.groupClasses": "",
+  "home.coaching.nutrition": "",
+  "home.recovery": "",
 
   "facility.hero": `${import.meta.env.BASE_URL}images/facility-hero.webp`,
   "facility.gallery.1": `${import.meta.env.BASE_URL}images/facility/facility-1.webp`,
