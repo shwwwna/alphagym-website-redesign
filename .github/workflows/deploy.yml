@@ -19,9 +19,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: home-new
     steps:
       - uses: actions/checkout@v4
 
@@ -29,7 +26,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: home-new/package-lock.json
 
       - run: npm ci
 
@@ -37,7 +33,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: home-new/dist
+          path: dist
 
   deploy:
     needs: build
